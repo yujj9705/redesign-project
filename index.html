@@ -95,12 +95,20 @@
                     <i class="fa-solid fa-magnifying-glass"></i>
                   </button>
                 </div>
-                <div class="login-box">
-                  <button class="login">로그인</button>
-                </div>
                 <div class="language">
-                  <p>KR</p>
-                  <i class="fa-solid fa-globe"></i>
+                  <button type="button" id="langBtn">
+                    <span id="langText">KR</span>
+                    <i class="fa-solid fa-globe"></i>
+                  </button>
+
+                  <!-- 드롭다운 메뉴 -->
+                  <ul class="lang-menu">
+                    <li data-lang="KR">KR</li>
+                    <li data-lang="EN">EN</li>
+                  </ul>
+                </div>
+                <div class="login-box">
+                  <a href="#" class="login-box">로그인</a>
                 </div>
               </div>
             </div>
@@ -109,7 +117,7 @@
       </header>
 
       <!-- hero section -->
-      <div class="hero-content container">
+      <div class="hero-content-container">
         <!-- left -->
         <div class="hero-title">
           <h1>

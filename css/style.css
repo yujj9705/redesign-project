@@ -57,7 +57,7 @@ img {
 /* 상단 이벤트 배너 */
 .top-banner {
   position: relative;
-  z-index: 50;
+  z-index: 999;
 }
 .top-ad-banner img {
   width: 100%;
@@ -88,4 +88,195 @@ img {
   cursor: pointer;
   font-size: 14px;
   color: #929292;
+}
+
+.hero-section {
+  position: relative;
+}
+.hero-swiper {
+  position: relative;
+}
+
+.hero-wrap {
+  position: absolute;
+  top: 0;
+  left: 100px;
+  width: 1172px;
+  z-index: 50;
+}
+.container {
+}
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+  margin-top: 44px;
+}
+.logo img {
+  width: 80px;
+  height: 99px;
+}
+.nav-bar {
+  display: flex;
+  align-items: center;
+  gap: 230px;
+  color: #fff;
+}
+.menu-list {
+  display: flex;
+  gap: 30px;
+  font-size: 18px;
+  font-weight: 600;
+}
+.menu-list li a {
+  color: #fff;
+}
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.nav-rght input,
+.nav-right button {
+  color: #fff;
+}
+.search {
+  display: flex;
+  gap: 0;
+  align-items: center;
+}
+.search input {
+  border: none;
+  border-bottom: 2px solid #fff;
+  outline: none;
+  background: transparent;
+  width: 150px;
+  padding: 5px;
+}
+.search button {
+  border: none;
+  outline: none;
+  background: transparent;
+  padding: 5px;
+}
+.search button i {
+  font-size: 24px;
+}
+.language {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.language button {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 400;
+  padding: 0;
+}
+
+.language button i {
+  font-size: 24px;
+}
+
+/* 드롭다운 메뉴 기본 숨김 */
+.lang-menu {
+  position: absolute;
+  top: 100%; /* 버튼 바로 아래 */
+  right: 0;
+  background: #fff;
+  color: #000;
+  list-style: none;
+  padding: 5px 0;
+  margin: 10px;
+  border-radius: 6px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+  display: none; /* 기본 숨김 */
+  min-width: 50px;
+  z-index: 100;
+}
+
+.lang-menu li {
+  padding: 5px 10px;
+  cursor: pointer;
+  text-align: center;
+}
+
+.lang-menu li:hover {
+  background-color: #f0f0f0;
+}
+
+.login-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 80px;
+  height: 30px;
+  background-color: #ff7835;
+  border-radius: 50px;
+
+  color: #fff;
+  font-size: 14px;
+  text-decoration: none;
+
+  cursor: pointer;
+}
+.login-box:hover {
+  background-color: #f5905d;
+}
+.hero-title {
+  position: absolute;
+  top: 319px;
+  left: 101px;
+  z-index: 100;
+  color: #fff;
+}
+.hero-title h1 {
+  font-size: 80px;
+  font-weight: 800;
+}
+.hero-title p {
+  font-size: 24px;
+  font-weight: 500;
+}
+.search-container {
+  position: absolute;
+  width: 715px;
+  height: 139px;
+  left: 100px;
+  top: 624px;
+  z-index: 100;
+
+  background: linear-gradient(
+    181.37deg,
+    rgba(255, 120, 53, 0.5) 23.3%,
+    rgba(229, 23, 62, 0.5) 98.83%
+  );
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 50px;
+}
+.search-title {
+  display: flex;
+  align-items: center;
+  color: #fff;
+}
+.s-title {
+  font-size: 30px;
+  font-weight: 700;
+}
+.hashtags-box {
+  display: flex;
+  align-items: center;
+}
+.hashtags {
+  display: flex;
+  align-items: center;
 }

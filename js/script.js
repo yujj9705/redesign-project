@@ -22,3 +22,29 @@ const heroRightSwiper = new Swiper(".hero-right-swiper", {
 // 두 Swiper 동기화
 heroSwiper.controller.control = heroRightSwiper;
 heroRightSwiper.controller.control = heroSwiper;
+
+// 언어 변경
+const langBtn = document.getElementById("langBtn");
+const langText = document.getElementById("langText");
+const langMenu = document.querySelector(".lang-menu");
+
+// 버튼 클릭 → 메뉴 토글
+langBtn.addEventListener("click", () => {
+  langMenu.style.display =
+    langMenu.style.display === "block" ? "none" : "block";
+});
+
+// 옵션 클릭 → 텍스트 변경 & 메뉴 닫기
+langMenu.querySelectorAll("li").forEach((item) => {
+  item.addEventListener("click", () => {
+    langText.textContent = item.dataset.lang;
+    langMenu.style.display = "none";
+  });
+});
+
+// 바깥 클릭 시 메뉴 닫기
+document.addEventListener("click", (e) => {
+  if (!document.querySelector(".language").contains(e.target)) {
+    langMenu.style.display = "none";
+  }
+});
