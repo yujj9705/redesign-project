@@ -56,204 +56,202 @@ img {
 
 /* 상단 이벤트 배너 */
 .top-banner {
-  position: relative;
+  position: absolute;
+  width: 100%;
+  height: 80px;
+  overflow: hidden;
   z-index: 999;
 }
-.top-ad-banner img {
+
+.top-banner img {
   width: 100%;
-  display: block;
+  height: 100%;
+  object-fit: cover;
 }
+
 .banner-controls {
   position: absolute;
-  right: 20px;
+  right: 30px;
   top: 50%;
   transform: translateY(-10%);
   display: flex;
   align-items: center;
-  gap: 20px;
+  font-size: 16px;
+  font-weight: 400;
+  color: 929292;
+  gap: 30px;
 }
 
-.detail-btn {
+.details {
+  gap: 10px;
+}
+.today-close {
   background: none;
   border: none;
   cursor: pointer;
-  font-size: 14px;
-  color: #929292;
+  gap: 10px;
 }
 
-.today-close {
+.hero {
   display: flex;
-  align-items: center;
-  gap: 5px;
-  cursor: pointer;
-  font-size: 14px;
-  color: #929292;
-}
-
-.hero-section {
   position: relative;
 }
-.hero-swiper {
-  position: relative;
+.hero-left {
+  width: 100%;
+  overflow: hidden;
+}
+.hero-left .swiper,
+.hero-left img {
+  width: 100%;
+  height: 100%;
 }
 
-.hero-wrap {
+.hero-left img {
+  object-fit: cover;
+}
+.hero-left::after {
+  content: "";
   position: absolute;
-  top: 0;
+  inset: 0;
+  background: rgb(0, 0, 0 0.5);
+}
+
+.header {
+  position: absolute;
+  top: 125px;
   left: 100px;
-  width: 1172px;
-  z-index: 50;
+  display: flex;
+  justify-content: space-between;
+  z-index: 10;
+  gap: 230px;
 }
-.container {
-}
-.header-content {
+
+.header-left {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 30px;
-  margin-top: 44px;
+  gap: 55px;
 }
 .logo img {
   width: 80px;
   height: 99px;
 }
-.nav-bar {
+.nav-box {
+  width: 471px;
   display: flex;
   align-items: center;
-  gap: 230px;
-  color: #fff;
-}
-.menu-list {
-  display: flex;
+  justify-content: space-between;
   gap: 30px;
-  font-size: 18px;
-  font-weight: 600;
 }
-.menu-list li a {
+.nav-box a {
   color: #fff;
+  font-size: 18px;
+  font-weight: 500;
 }
-.nav-right {
+
+.header-right {
   display: flex;
   align-items: center;
   gap: 20px;
 }
-.nav-rght input,
-.nav-right button {
+
+.mini-search {
+  border-bottom: 3px solid #fff;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.mini-search input {
+  border: none;
+  background: none;
+  outline: none;
+}
+.mini-search i {
+  font-size: 18px;
   color: #fff;
 }
-.search {
-  display: flex;
-  gap: 0;
-  align-items: center;
-}
-.search input {
-  border: none;
-  border-bottom: 2px solid #fff;
-  outline: none;
-  background: transparent;
-  width: 150px;
-  padding: 5px;
-}
-.search button {
-  border: none;
-  outline: none;
-  background: transparent;
-  padding: 5px;
-}
-.search button i {
-  font-size: 24px;
-}
+
 .language {
   position: relative;
-  display: flex;
-  align-items: center;
 }
-
-.language button {
+.lang-btn {
+  color: #fff;
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 10px;
+  font-size: 18px;
   background: none;
   border: none;
-  cursor: pointer;
-  color: #fff;
-  font-size: 18px;
-  font-weight: 400;
-  padding: 0;
 }
-
-.language button i {
-  font-size: 24px;
-}
-
-/* 드롭다운 메뉴 기본 숨김 */
-.lang-menu {
+.lang-dropdown {
   position: absolute;
-  top: 100%; /* 버튼 바로 아래 */
+  top: 35px;
   right: 0;
   background: #fff;
-  color: #000;
-  list-style: none;
-  padding: 5px 0;
-  margin: 10px;
-  border-radius: 6px;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
-  display: none; /* 기본 숨김 */
-  min-width: 50px;
-  z-index: 100;
+  color: #ff7835;
+  border-radius: 10px;
+  overflow: hidden;
+  display: none;
+  min-width: 80px;
+  box-shadow: 0 5px 15px rgb(0, 0, 0 0.2);
 }
 
-.lang-menu li {
-  padding: 5px 10px;
+.lang-dropdown li {
+  padding: 10px;
   cursor: pointer;
   text-align: center;
 }
 
-.lang-menu li:hover {
-  background-color: #f0f0f0;
+.lang-dropdown li:hover {
+  background: #f5f5f5;
 }
 
-.login-box {
+/* 열렸을 때 */
+.language.active .lang-dropdown {
+  display: block;
+}
+
+.login-btn {
+  width: 80px;
+  height: 30px;
   display: flex;
   align-items: center;
   justify-content: center;
-
-  width: 80px;
-  height: 30px;
   background-color: #ff7835;
-  border-radius: 50px;
-
+  border: none;
+  border-radius: 20px;
   color: #fff;
-  font-size: 14px;
-  text-decoration: none;
-
+  padding: 6px 16px;
   cursor: pointer;
+  font-size: 16pxpx;
 }
-.login-box:hover {
-  background-color: #f5905d;
+
+.hero-section {
+  display: flex;
 }
-.hero-title {
+.hero-text {
   position: absolute;
-  top: 319px;
-  left: 101px;
-  z-index: 100;
+  top: 35%;
+  left: 100px;
+  z-index: 10;
   color: #fff;
 }
-.hero-title h1 {
+.hero-text h1 {
   font-size: 80px;
-  font-weight: 800;
+  font-weight: 700;
+  line-height: 1.4;
 }
-.hero-title p {
+.hero-text p {
+  margin-top: 36px;
   font-size: 24px;
-  font-weight: 500;
+  font-weight: 600;
 }
-.search-container {
+.search-box {
   position: absolute;
+  top: 65%;
+  left: 100px;
+  z-index: 10;
   width: 715px;
   height: 139px;
-  left: 100px;
-  top: 624px;
-  z-index: 100;
 
   background: linear-gradient(
     181.37deg,
@@ -262,21 +260,91 @@ img {
   );
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   border-radius: 50px;
+  padding: 25px 47px;
 }
-.search-title {
+
+.search-text {
   display: flex;
   align-items: center;
+  gap: 15px;
   color: #fff;
 }
-.s-title {
+
+.search-title {
   font-size: 30px;
-  font-weight: 700;
+  font-weight: 600;
+  display: block;
+  margin-bottom: 5px;
 }
-.hashtags-box {
-  display: flex;
-  align-items: center;
+.search-sub-title {
+  font-size: 18px;
+  font-weight: 600;
 }
+
 .hashtags {
+  width: 356px;
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  font-size: 14px;
+  gap: 5px;
 }
+.search-input {
+  display: flex;
+  align-items: center;
+  margin-top: 5px;
+}
+
+.search-input input {
+  flex: 1;
+  padding: 12px 15px;
+  border-radius: 25px;
+  border: none;
+  outline: none;
+}
+.search-input button {
+  margin-left: 10px;
+  background: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+}
+.search-input button i {
+  width: 30px;
+  height: 30px;
+  color: #f58044;
+}
+
+.hero-right {
+  width: 40%;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.hero-right .swiper {
+  width: 85%;
+  height: 100%;
+  border-radius: 40px 0 0 40px;
+  overflow: hidden;
+  border: 10px solid #fff;
+}
+.hero-right img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.hero-right::after {
+  content: "KCLA";
+  position: absolute;
+  bottom: 20px;
+  right: 500px;
+  font-size: 80px;
+  font-weight: 800;
+  color: #fff;
+  z-index: 20;
+}
+
+/* footer */

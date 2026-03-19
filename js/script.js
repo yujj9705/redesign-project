@@ -1,50 +1,45 @@
-// 배경 슬라이드
-const heroSwiper = new Swiper(".hero-swiper", {
+const leftSwiper = new Swiper(".hero-swiper", {
   loop: true,
+  speed: 1000,
+  effect: "fade",
+  allowTouchMove: false, // 왼쪽은 터치 막기 (배경용)
   autoplay: {
-    delay: 4000,
+    delay: 3000,
     disableOnInteraction: false,
   },
-  effect: "fade",
-  pagination: {
-    el: ".swiper-pagination",
-    clickable: true,
-  },
 });
 
-// 오른쪽 이미지 슬라이드
-const heroRightSwiper = new Swiper(".hero-right-swiper", {
+const rightSwiper = new Swiper(".hero-swiper-right", {
   loop: true,
-  effect: "fade",
-  allowTouchMove: false, // 오른쪽 이미지는 드래그 금지
+  speed: 1000,
 });
 
-// 두 Swiper 동기화
-heroSwiper.controller.control = heroRightSwiper;
-heroRightSwiper.controller.control = heroSwiper;
+leftSwiper.controller.control = rightSwiper;
+rightSwiper.controller.control = leftSwiper;
 
-// 언어 변경
-const langBtn = document.getElementById("langBtn");
-const langText = document.getElementById("langText");
-const langMenu = document.querySelector(".lang-menu");
+// 언어변경
+const langBox = document.querySelector(".language");
+const langBtn = document.querySelector(".lang-btn");
+const langItems = document.querySelectorAll(".lang-dropdown li");
+const currentLang = document.querySelector(".current-lang");
 
-// 버튼 클릭 → 메뉴 토글
+// 버튼 클릭 → 드롭다운 열기/닫기
 langBtn.addEventListener("click", () => {
-  langMenu.style.display =
-    langMenu.style.display === "block" ? "none" : "block";
+  langBox.classList.toggle("active");
 });
 
-// 옵션 클릭 → 텍스트 변경 & 메뉴 닫기
-langMenu.querySelectorAll("li").forEach((item) => {
+// 언어 선택
+langItems.forEach((item) => {
   item.addEventListener("click", () => {
-    langText.textContent = item.dataset.lang;
-    langMenu.style.display = "none";
+    const selected = item.dataset.lang;
+    currentLang.textContent = selected;
+    langBox.classList.remove("active");
   });
 });
 
-// 바깥 클릭 시 메뉴 닫기
+// 바깥 클릭하면 닫기
 document.addEventListener("click", (e) => {
-  if (!document.querySelector(".language").contains(e.target)) {
-    langMenu.style.display = "none";
+  if (!langBox.contains(e.target)) {
+    langBox.classList.remove("active");
   }
 });

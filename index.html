@@ -24,160 +24,207 @@
   </head>
 
   <body>
-    <!-- 이벤트 바 -->
+    <!-- 상단광고배너 -->
     <div class="top-banner">
-      <a href="#" class="top-ad-banner">
-        <img src="./assets/images/banner.jpg" alt="2026년 설맞이 이벤트 배너" />
-      </a>
+      <img src="./assets/images/banner.jpg" alt="설맞이 광고배너" />
 
       <div class="banner-controls">
-        <button class="detail-btn">
-          공고 내용 자세히 보기
-          <span><i class="fa-solid fa-arrow-down"></i></span>
+        <div class="details">
+          <a href="#">공고 자세히 보기</a>
+          <i class="fa-solid fa-arrow-down"></i>
+        </div>
+        <button class="today-close">
+          오늘 그만보기
+          <input type="checkbox" />
         </button>
-        <label class="today-close">
-          오늘은 그만보기
-          <input type="checkbox" id="hideToday" />
-        </label>
       </div>
     </div>
 
-    <!-- header section -->
-    <section class="hero-section">
-      <!-- 배경 슬라이드1 -->
-      <div class="swiper hero-swiper">
-        <div class="swiper-wrapper">
-          <div class="swiper-slide">
-            <img src="./assets/images/1.jpg" alt="십자수 이미지" />
-          </div>
-          <div class="swiper-slide">
-            <img src="./assets/images/2.jpg" alt="조개아트 이미지" />
-          </div>
-          <div class="swiper-slide">
-            <img src="./assets/images/3.jpg" alt="뜨개실 이미지" />
-          </div>
-          <div class="swiper-slide">
-            <img src="./assets/images/4.jpg" alt="실 인형 공예 이미지" />
+    <!-- hero section -->
+    <section class="hero">
+      <div class="hero-left">
+        <div class="swiper hero-swiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <img src="./assets/images/1.jpg" alt="흑백 십자수 이미지" />
+            </div>
+            <div class="swiper-slide">
+              <img src="./assets/images/2.jpg" alt="흑백 조개껍질공예 이미지" />
+            </div>
+            <div class="swiper-slide">
+              <img src="./assets/images/3.jpg" alt="흑백 뜨개실 이미지" />
+            </div>
+            <div class="swiper-slide">
+              <img src="./assets/images/4.jpg" alt="흑백 인형공예 이미지" />
+            </div>
           </div>
         </div>
-        <div class="swiper-pagination"></div>
-      </div>
 
-      <header class="hero-wrap">
-        <div class="container">
-          <div class="header-content">
-            <!-- logo -->
+        <!-- header section -->
+        <header class="header">
+          <div class="header-left">
             <div class="logo">
-              <a href="index.html">
-                <img
-                  src="./assets/images/header-logo.png"
-                  alt="대한공예협회 로고"
-                />
-              </a>
+              <img src="./assets/images/header-logo.png" alt="로고" />
             </div>
 
-            <!-- nav -->
-            <div class="nav-bar">
-              <nav>
-                <ul class="menu-list">
-                  <li><a href="#">협회 소개</a></li>
-                  <li><a href="#">자격증 안내</a></li>
-                  <li><a href="#">교육 · 수강</a></li>
-                  <li><a href="#">문의하기</a></li>
-                  <li><a href="#">커뮤니티</a></li>
-                </ul>
-              </nav>
-
-              <div class="nav-right">
-                <div class="search">
-                  <input type="text" placeholder="" />
-                  <button>
-                    <i class="fa-solid fa-magnifying-glass"></i>
-                  </button>
-                </div>
-                <div class="language">
-                  <button type="button" id="langBtn">
-                    <span id="langText">KR</span>
-                    <i class="fa-solid fa-globe"></i>
-                  </button>
-
-                  <!-- 드롭다운 메뉴 -->
-                  <ul class="lang-menu">
-                    <li data-lang="KR">KR</li>
-                    <li data-lang="EN">EN</li>
-                  </ul>
-                </div>
-                <div class="login-box">
-                  <a href="#" class="login-box">로그인</a>
-                </div>
-              </div>
-            </div>
+            <nav class="nav">
+              <ul class="nav-box">
+                <li><a href="#">협회 소개</a></li>
+                <li><a href="#">자격증 안내</a></li>
+                <li><a href="#">교육 · 수강</a></li>
+                <li><a href="#">문의하기</a></li>
+                <li><a href="#">커뮤니티</a></li>
+              </ul>
+            </nav>
           </div>
-        </div>
-      </header>
 
-      <!-- hero section -->
-      <div class="hero-content-container">
-        <!-- left -->
-        <div class="hero-title">
-          <h1>
-            <span class="hero-title-line1">" 손끝에서 만들어지는</span><br />
-            <span class="hero-title-line2">행복한 공예세상 "</span>
-          </h1>
+          <div class="header-right">
+            <div class="mini-search">
+              <input type="text" />
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+            <div class="language">
+              <button class="lang-btn">
+                <span class="basic-lang">KR</span>
+                <i class="fa-solid fa-globe"></i>
+              </button>
 
-          <p class="hero-subtitle">
-            1999년 부터 전국 100만 회원과 함께 이어온 대한민국 대표 공예 사단
-            법인
-          </p>
-        </div>
-
-        <!-- 통합 검색 -->
-        <div class="search-container">
-          <div class="search-title">
-            <span class="s-title">통합검색</span>
-            <div class="hashtags-box">
-              <span class="s-sub-title">#추천 검색어</span>
-              <ul class="hashtags">
-                <li>#온라인 강의</li>
-                <li>#자격증 시험접수</li>
-                <li>#시험 결과발표</li>
-                <li>#뜨개질</li>
+              <ul class="lang-dropdown">
+                <li data-lang="KR">KR</li>
+                <li data-lang="EN">EN</li>
               </ul>
             </div>
+            <div class="login">
+              <button class="login-btn">로그인</button>
+            </div>
+          </div>
+        </header>
+
+        <div class="hero-section">
+          <!-- text -->
+          <div class="hero-text">
+            <h1>
+              "손끝에서 만들어지는 <br />
+              행복한 공예세상"
+            </h1>
+            <p>
+              1999년 부터 전국 100만 회원과 함께 이어온 대한민국 대표 공예 사단
+              법인
+            </p>
           </div>
 
+          <!-- left search -->
           <div class="search-box">
-            <input type="text" placeholder="검색어를 입력해 주세요." />
-            <button>
-              <i class="fa-solid fa-magnifying-glass"></i>
-            </button>
+            <div class="search-text">
+              <span class="search-title">통합검색</span>
+              <span class="search-sub-title">#추천 검색어</span>
+              <div class="hashtags">
+                <span>#온라인 강의</span>
+                <span>#자격증 시험 접수</span>
+                <span>#시험 결과 발표</span>
+                <span>#뜨개질 강의</span>
+              </div>
+            </div>
+
+            <div class="search-input">
+              <input type="text" placeholder="검색어를 입력해 주세요." />
+              <button><i class="fa-solid fa-magnifying-glass"></i></button>
+            </div>
           </div>
         </div>
+      </div>
 
-        <!-- right -->
-        <div class="hero-right">
-          <div class="swiper hero-right-swiper">
-            <div class="swiper-wrapper">
-              <div class="swiper-slide">
-                <img src="./assets/images/1-1.jpg" alt="십자수 이미지" />
-              </div>
-              <div class="swiper-slide">
-                <img src="./assets/images/2-1.jpg" alt="조개아트 이미지" />
-              </div>
-              <div class="swiper-slide">
-                <img src="./assets/images/3-1.jpg" alt="뜨개실 이미지" />
-              </div>
-              <div class="swiper-slide">
-                <img src="./assets/images/4-1.jpg" alt="실 인형 공예 이미지" />
-              </div>
+      <!-- right-hero -->
+      <div class="hero-right">
+        <div class="swiper hero-swiper-right">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <img src="./assets/images/1-1.jpg" alt="십자수 이미지" />
+            </div>
+            <div class="swiper-slide">
+              <img src="./assets/images/2-1.jpg" alt="조개껍질공예 이미지" />
+            </div>
+            <div class="swiper-slide">
+              <img src="./assets/images/3-1.jpg" alt="뜨개실 이미지" />
+            </div>
+            <div class="swiper-slide">
+              <img src="./assets/images/4-1.jpg" alt="인형공예 이미지" />
             </div>
           </div>
         </div>
       </div>
     </section>
+
     <!-- main section -->
+    <!-- 인기 강의 -->
+    <!-- 자격증 관련 -->
+    <!-- 강의 미리보기 -->
+    <!-- 수강후기 -->
+    <!-- 맞춤추천-->
+    <!-- 커뮤니티 -->
+    <!-- 바로가기 -->
 
     <!-- footer section -->
-    <footer></footer>
+    <footer class="footer">
+      <div class="footer-inner">
+        <!-- left -->
+        <div class="footer-left">
+          <div class="footer-logo">
+            <img src="./assets/images/footer-logo.png" alt="푸터 로고" />
+          </div>
+
+          <ul class="footer-menu">
+            <li><a href="#">협회 소개</a></li>
+            <li><a href="#">사이트맵</a></li>
+            <li><a href="#">개인정보 처리방침</a></li>
+            <li><a href="#">서비스 이용약관</a></li>
+            <li><a href="#">이용안내</a></li>
+          </ul>
+
+          <div class="footer-info">
+            <p>상호 : 대한공예협회</p>
+            <p>사업자 등록번호 : 409-81-86602</p>
+            <p>통신판매업신고 : 제 2011-광주북구-102호</p>
+
+            <p class="line"></p>
+            <p>서울지부 : 경기도 성남시 분당구 장미로 36</p>
+            <p>지방지부 : 광주광역시 북구 설죽로 199 4층</p>
+            <p>문의 : 1644-4054 / Email : jjang6277@naver.com</p>
+            <p class="copy">Copyright © 2010 koreahand.or.kr</p>
+          </div>
+        </div>
+
+        <!-- right -->
+        <div class="footer-right">
+          <div class="sns-list">
+            <a href="#"
+              ><img src="./assets/icons/kakao.png" alt="카카오톡"
+            /></a>
+            <a href="#"
+              ><img src="./assets/icons/insta.png" alt="인스타그램"
+            /></a>
+            <a href="#"
+              ><img src="./assets/icons/youtube.png" alt="유튜브"
+            /></a>
+            <a href="#"><img src="./assets/icons/blog.png" alt="블로그" /></a>
+          </div>
+
+          <div class="customer">
+            <p class="text">고객센터 / 강의 추천 문의 : 16444-4054</p>
+            <p>상담시간 : 평일 am 9:00 ~ pm 6:00</p>
+            <p>주말 / 공휴일 휴무</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 푸터 하단 바로가기 -->
+      <div class="footer-bottom">
+        <div class="footer-go">
+          <p>Link Site Banner</p>
+          <p>유관업체 바로가기</p>
+          <p class="footer-line"></p>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>
