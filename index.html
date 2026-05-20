@@ -14,6 +14,7 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
 
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
     <script src="js/script.js" defer></script>
 
     <!-- fontawesome -->
@@ -71,11 +72,100 @@
 
             <nav class="nav">
               <ul class="nav-box">
-                <li><a href="#">협회 소개</a></li>
-                <li><a href="#">자격증 안내</a></li>
-                <li><a href="#">교육 · 수강</a></li>
-                <li><a href="#">문의하기</a></li>
-                <li><a href="#">커뮤니티</a></li>
+                <!-- 협회 소개 -->
+                <li class="nav-item">
+                  <a href="#">협회 소개</a>
+                  <div class="nav-dropdown">
+                    <div class="nav-dropdown-col">
+                      <p class="nav-dropdown-title">협회소개</p>
+                      <ul>
+                        <li><a href="#">인사말</a></li>
+                        <li><a href="#">설립취지</a></li>
+                        <li><a href="#">조직도</a></li>
+                        <li><a href="#">CI소개</a></li>
+                      </ul>
+                      <a href="#" class="nav-dropdown-link">전국 지부 안내</a>
+                    </div>
+                  </div>
+                </li>
+
+                <!-- 자격증 안내 -->
+                <li class="nav-item">
+                  <a href="#">자격증 안내</a>
+                  <div class="nav-dropdown">
+                    <div class="nav-dropdown-col">
+                      <p class="nav-dropdown-title">자격증안내</p>
+                      <ul>
+                        <li><a href="#">자격 종류</a></li>
+                        <li><a href="#">응시 자격</a></li>
+                        <li><a href="#">취득 절차</a></li>
+                      </ul>
+                    </div>
+                    <div class="nav-dropdown-col">
+                      <p class="nav-dropdown-title">일정 안내</p>
+                      <ul>
+                        <li><a href="#">연간 일정</a></li>
+                        <li><a href="#">회차별 일정 공지</a></li>
+                      </ul>
+                    </div>
+                    <div class="nav-dropdown-col">
+                      <p class="nav-dropdown-title">시험 접수하기</p>
+                      <ul>
+                        <li><a href="#">접수</a></li>
+                        <li><a href="#">접수 확인 / 수정</a></li>
+                      </ul>
+                    </div>
+                    <div class="nav-dropdown-col">
+                      <p class="nav-dropdown-title">작품 제출 안내</p>
+                      <ul>
+                        <li><a href="#">제출 방법</a></li>
+                        <li><a href="#">제출 규격 및 유의사항</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </li>
+
+                <!-- 교육·수강 -->
+                <li class="nav-item">
+                  <a href="#">교육 · 수강</a>
+                  <div class="nav-dropdown">
+                    <div class="nav-dropdown-col">
+                      <ul>
+                        <li><a href="#">온라인 강좌</a></li>
+                        <li><a href="#">수강료/패키지 안내</a></li>
+                        <li><a href="#">재료 패키지 구매</a></li>
+                        <li><a href="#">사범취득자 명함 신청</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </li>
+
+                <!-- 문의하기 -->
+                <li class="nav-item">
+                  <a href="#">문의하기</a>
+                  <div class="nav-dropdown">
+                    <div class="nav-dropdown-col">
+                      <ul>
+                        <li><a href="#">1:1 문의</a></li>
+                        <li><a href="#">자주 묻는 질문 (FAQ)</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </li>
+
+                <!-- 커뮤니티 -->
+                <li class="nav-item">
+                  <a href="#">커뮤니티</a>
+                  <div class="nav-dropdown">
+                    <div class="nav-dropdown-col">
+                      <ul>
+                        <li><a href="#">공예뉴스</a></li>
+                        <li><a href="#">게시판</a></li>
+                        <li><a href="#">자료실</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </li>
               </ul>
             </nav>
           </div>
@@ -99,6 +189,13 @@
             <div class="login">
               <button class="login-btn">로그인</button>
             </div>
+
+            <!-- 햄버거 버튼 (모바일만 표시) -->
+            <button class="hamburger">
+              <span></span>
+              <span></span>
+              <span></span>
+            </button>
           </div>
         </header>
 
@@ -110,8 +207,8 @@
               행복한 공예세상"
             </h1>
             <p>
-              1999년 부터 전국 100만 회원과 함께 이어온 대한민국 대표 공예 사단
-              법인
+              1999년 부터 전국 100만 회원과<br class="mo-br" />
+              함께 이어온 대한민국 대표 공예 사단 법인
             </p>
           </div>
 
@@ -184,7 +281,7 @@
             <h3>마크라메</h3>
             <p>
               마크라메 강의는 매듭 기법을 활용해 소품과 <br />
-              인테리어 작품을 제작하는 과정입니다..
+              인테리어 작품을 제작하는 과정입니다.
             </p>
           </div>
         </div>
@@ -696,56 +793,51 @@
           <a href="#" class="reviews-write-btn">후기 쓰러 가기 ↗</a>
         </div>
 
-        <div class="reviews-grid">
-          <ul class="reviews-col">
-            <li>
+        <div class="reviews-ticker-wrap">
+          <div class="reviews-ticker" id="reviewsTicker">
+            <div class="reviews-ticker-item">
               <span class="reviewer">김 * 정</span>
               <span class="review-text"
                 >" 수업내용도 알차고 강의는 언제 어디서든 동영상으로 시청할 수
                 있어서 도움 되었습니다."</span
               >
-            </li>
-            <li>
+            </div>
+            <div class="reviews-ticker-item">
               <span class="reviewer">정 * 경</span>
               <span class="review-text"
                 >" 아무것도 없는 원단위에 이쁘게 꽃을 수놓아 작품을 완성할때면
                 혼자서 너무 뿌듯해 했답니다."</span
               >
-            </li>
-            <li>
+            </div>
+            <div class="reviews-ticker-item">
               <span class="reviewer">최 * 희</span>
               <span class="review-text"
                 >"손으로 만드는걸 좋아하는데 다양한 과목을 배울 수 있어서
                 좋습니다."</span
               >
-            </li>
-          </ul>
-
-          <div class="reviews-col-divider"></div>
-
-          <ul class="reviews-col">
-            <li>
+            </div>
+            <div class="reviews-ticker-item">
               <span class="reviewer">이 * 북</span>
               <span class="review-text"
                 >" 자세한 설명으로 도움이 많이되어 빠르게 작품을 완성할 수
                 있었습니다. 온라인 수업 추천합니다."</span
               >
-            </li>
-            <li>
+            </div>
+            <div class="reviews-ticker-item">
               <span class="reviewer">김 *</span>
               <span class="review-text"
                 >" 자기만의 시간을 가지고 좋아하는 것을 하다보면 성취감도 생기고
                 힐링이 되서 좋아요."</span
               >
-            </li>
-            <li>
+            </div>
+            <div class="reviews-ticker-item">
               <span class="reviewer">이 * 해</span>
               <span class="review-text"
                 >" 새롭게 도전 할 수 있는 무언가가 있다는게 감사하고
                 행복했습니다!"</span
               >
-            </li>
-          </ul>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -1055,6 +1147,14 @@
       </div>
     </section>
 
+    <!-- 문의하기 버튼 -->
+    <a href="#" class="float-contact">
+      <div class="float-contact-icon">
+        <i class="fa-solid fa-circle-info"></i>
+      </div>
+      <span>문의하기</span>
+    </a>
+
     <!-- footer section -->
     <footer class="footer">
       <div class="footer-inner">
@@ -1153,5 +1253,49 @@
         </div>
       </div>
     </footer>
+
+    <!-- 모바일 메뉴 드로어 -->
+    <div class="mobile-menu">
+      <button class="mobile-menu-close">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+      <ul class="mobile-nav-list">
+        <li class="mobile-nav-item">
+          <a href="#">협회 소개</a>
+          <ul class="mobile-sub-list">
+            <li><a href="#">인사말</a></li>
+            <li><a href="#">설립취지</a></li>
+            <li><a href="#">조직도</a></li>
+            <li><a href="#">CI소개</a></li>
+            <li><a href="#">전국 지부 안내</a></li>
+          </ul>
+        </li>
+        <li class="mobile-nav-item">
+          <a href="#">자격증 안내</a>
+          <ul class="mobile-sub-list">
+            <li><a href="#">자격 종류</a></li>
+            <li><a href="#">응시 자격</a></li>
+            <li><a href="#">취득 절차</a></li>
+            <li><a href="#">연간 일정</a></li>
+            <li><a href="#">시험 접수하기</a></li>
+          </ul>
+        </li>
+        <li class="mobile-nav-item">
+          <a href="#">교육 · 수강</a>
+          <ul class="mobile-sub-list">
+            <li><a href="#">온라인 강좌</a></li>
+            <li><a href="#">수강료/패키지 안내</a></li>
+            <li><a href="#">재료 패키지 구매</a></li>
+            <li><a href="#">사범취득자 명함 신청</a></li>
+          </ul>
+        </li>
+        <li class="mobile-nav-item"><a href="#">문의하기</a></li>
+        <li class="mobile-nav-item"><a href="#">커뮤니티</a></li>
+      </ul>
+      <div class="mobile-menu-bottom">
+        <button class="mobile-lang-btn">KR / EN</button>
+        <a href="#" class="mobile-login-btn">로그인</a>
+      </div>
+    </div>
   </body>
 </html>

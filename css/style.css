@@ -133,19 +133,22 @@ img {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 60px;
+  padding: 0 40px;
   height: 80px;
+  overflow: visible;
 }
+
 .header-left {
   display: flex;
   align-items: center;
-  gap: 50px;
+  gap: 36px;
   flex-shrink: 0;
 }
 .logo img {
-  width: 60px;
+  width: 80px;
   height: auto;
 }
+
 .nav-box {
   display: flex;
   align-items: center;
@@ -154,8 +157,8 @@ img {
 }
 .nav-box a {
   color: #fff;
-  font-size: 16px;
-  font-weight: 500;
+  font-size: 20px;
+  font-weight: 600;
   white-space: nowrap;
 }
 .nav-box a:hover {
@@ -164,16 +167,18 @@ img {
 .header-right {
   display: flex;
   align-items: center;
-  gap: 16px;
-  margin-left: 50px;
+  gap: 12px;
+  margin-left: 20px;
+  flex-shrink: 0;
 }
+
 .mini-search {
   display: flex;
   align-items: center;
   gap: 8px;
   border-bottom: 2px solid rgba(255, 255, 255, 0.7);
   padding-bottom: 4px;
-  width: 180px;
+  width: 140px;
 }
 .mini-search input {
   border: none;
@@ -199,7 +204,7 @@ img {
   display: flex;
   align-items: center;
   gap: 6px;
-  font-size: 16px;
+  font-size: 20px;
   font-weight: 500;
   background: none;
   border: none;
@@ -231,7 +236,7 @@ img {
   display: block;
 }
 .login-btn {
-  height: 34px;
+  height: 38px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -241,7 +246,7 @@ img {
   color: #fff;
   padding: 0 20px;
   cursor: pointer;
-  font-size: 15px;
+  font-size: 18px;
   font-weight: 500;
   white-space: nowrap;
 }
@@ -251,7 +256,7 @@ img {
 
 .hero-section {
   position: absolute;
-  bottom: 250px;
+  bottom: 200px;
   left: 60px;
   z-index: 10;
   display: flex;
@@ -296,13 +301,13 @@ img {
   overflow: hidden;
 }
 .search-title {
-  font-size: 20px;
+  font-size: 24px;
   font-weight: 700;
   white-space: nowrap;
   flex-shrink: 0;
 }
 .search-sub-title {
-  font-size: 13px;
+  font-size: 16px;
   font-weight: 600;
   white-space: nowrap;
   flex-shrink: 0;
@@ -312,7 +317,7 @@ img {
   display: flex;
   align-items: center;
   gap: 8px;
-  font-size: 12px;
+  font-size: 14px;
   overflow: hidden;
 }
 .hashtags span {
@@ -357,7 +362,7 @@ img {
   position: absolute;
   top: 60px;
   right: 0;
-  width: 38%;
+  width: 35%;
   height: calc(100% - 60px);
   z-index: 5;
 }
@@ -489,22 +494,27 @@ img {
 }
 .card-text h3,
 .card-active-text h3 {
-  font-size: 20px;
+  font-size: 24px;
   font-weight: 700;
   color: rgba(59, 59, 59, 0.9);
   margin-bottom: 6px;
-  transition: color 0.3s ease;
+  transition:
+    color 0.3s ease,
+    font-size 0.3s ease;
 }
 .card:hover .card-text h3,
 .card-active:hover .card-active-text h3 {
   color: #1a1a1a;
+  font-size: 22px;
 }
 .card-text p,
 .card-active-text p {
-  font-size: 14px;
+  font-size: 15px;
   color: #555;
   line-height: 1.5;
-  transition: color 0.3s ease;
+  transition:
+    color 0.3s ease,
+    font-size 0.3s ease;
   display: -webkit-box;
   -webkit-line-clamp: 4;
   -webkit-box-orient: vertical;
@@ -513,6 +523,7 @@ img {
 .card:hover .card-text p,
 .card-active:hover .card-active-text p {
   color: #222;
+  font-size: 16px;
 }
 
 .cert-section {
@@ -579,7 +590,7 @@ img {
 .cert-search-input button {
   width: 54px;
   height: 54px;
-  background-color: #e5173e;
+  background-color: #fff;
   border: none;
   border-radius: 50%;
   cursor: pointer;
@@ -589,8 +600,8 @@ img {
   flex-shrink: 0;
 }
 .cert-search-input button i {
-  color: #fff;
-  font-size: 20px;
+  color: #e5173e;
+  font-size: 24px;
 }
 .cert-body {
   display: flex;
@@ -716,7 +727,7 @@ img {
   flex: 1;
   background:
     linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)),
-    url("./assets/images/55 1.jpg") center/cover no-repeat;
+    url("../assets/images/55 1.jpg") center/cover no-repeat;
   border-radius: 16px;
   padding: 32px;
   display: flex;
@@ -1187,7 +1198,7 @@ img {
   margin: 40px 0;
 }
 .reviews-body {
-  padding: 0 100px;
+  padding: 0 40px;
 }
 .reviews-header {
   display: flex;
@@ -1216,26 +1227,47 @@ img {
   background-color: #e5652a;
   color: #fff;
 }
-.reviews-grid {
-  display: flex;
-  align-items: stretch;
+
+/* 수강후기 세로 티커 */
+.reviews-ticker-wrap {
+  overflow: hidden;
+  height: 240px;
+  position: relative;
 }
-.reviews-col {
-  flex: 1;
+.reviews-ticker-wrap::before,
+.reviews-ticker-wrap::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 50px;
+  z-index: 2;
+  pointer-events: none;
+}
+.reviews-ticker-wrap::before {
+  top: 0;
+  background: linear-gradient(to bottom, #fff, transparent);
+}
+.reviews-ticker-wrap::after {
+  bottom: 0;
+  background: linear-gradient(to top, #fff, transparent);
+}
+.reviews-ticker {
   display: flex;
   flex-direction: column;
-  gap: 24px;
-  padding: 0 20px;
+  animation: tickerScroll 10s linear infinite;
 }
-.reviews-col:first-child {
-  padding-left: 0;
+.reviews-ticker:hover {
+  animation-play-state: paused;
 }
-.reviews-col li {
+.reviews-ticker-item {
   display: flex;
-  gap: 12px;
+  gap: 16px;
+  padding: 18px 8px;
+  border-bottom: 1px solid rgba(229, 23, 62, 0.15);
   font-size: 15px;
-  color: #444;
   line-height: 1.7;
+  flex-shrink: 0;
 }
 .reviewer {
   font-weight: 700;
@@ -1246,11 +1278,14 @@ img {
 .review-text {
   color: #555;
 }
-.reviews-col-divider {
-  width: 1.5px;
-  background: #f0f0f0;
-  flex-shrink: 0;
-  margin: 0 20px;
+
+@keyframes tickerScroll {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-50%);
+  }
 }
 
 /* ────────────────────────────────────────
@@ -1265,8 +1300,8 @@ img {
 
 /* FIX: 좌측 너비 확대 + 한글 줄바꿈 */
 .recommend-left {
-  min-width: 360px;
-  max-width: 380px;
+  min-width: 320px;
+  max-width: 360px;
   display: flex;
   flex-direction: column;
   gap: 32px;
@@ -1611,9 +1646,11 @@ img {
 ──────────────────────────────────────── */
 .goto-section {
   position: relative;
+  z-index: 1;
+  margin-bottom: -80px;
   width: 100%;
   height: 547px;
-  background: url("./assets/images/go-bg.jpg") center/cover no-repeat;
+  background: url("../assets/images/go-bg.jpg") center/cover no-repeat;
   display: flex;
   align-items: center;
   overflow: hidden;
@@ -1632,10 +1669,10 @@ img {
   position: relative;
   z-index: 1;
   width: 100%;
-  padding: 0 100px;
+  padding: 0 40px;
   display: flex;
   flex-direction: column;
-  gap: 40px;
+  gap: 28px;
 }
 
 .goto-title {
@@ -1702,10 +1739,57 @@ img {
 }
 
 /* ────────────────────────────────────────
+   플로팅 문의하기 버튼
+──────────────────────────────────────── */
+.float-contact {
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  width: 80px;
+  height: 80px;
+  background-color: #e5173e;
+  border-radius: 20px;
+  box-shadow: 0 4px 16px rgba(229, 23, 62, 0.4);
+  cursor: pointer;
+  text-decoration: none;
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s;
+}
+.float-contact:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(229, 23, 62, 0.5);
+}
+.float-contact-icon {
+  width: 36px;
+  height: 36px;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.float-contact-icon i {
+  font-size: 18px;
+  color: #fff;
+}
+.float-contact span {
+  font-size: 13px;
+  font-weight: 700;
+  color: #fff;
+}
+/* ────────────────────────────────────────
    FOOTER
 ──────────────────────────────────────── */
 .footer {
   position: relative;
+  z-index: 2;
   width: 100%;
   min-height: 750px;
   background: linear-gradient(180deg, #f8712d 36.47%, #e5173e 100%);
@@ -1827,4 +1911,127 @@ img {
   background: rgba(255, 255, 255, 0.6);
   border: none;
   transform: none;
+}
+
+/* ────────────────────────────────────────
+   네비게이션 드롭다운
+──────────────────────────────────────── */
+.nav {
+  position: static; /* header 기준으로 */
+}
+
+.nav-box {
+  display: flex;
+  align-items: center;
+  gap: 36px;
+  list-style: none;
+  position: static;
+}
+
+.nav-item {
+  position: static;
+}
+
+.nav-dropdown {
+  display: none;
+  position: absolute;
+  top: 80px; /* 헤더 높이만큼 아래 */
+  left: 0; /* 헤더 왼쪽 끝 */
+  right: 0; /* 헤더 오른쪽 끝 (로그인 버튼까지) */
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(12px);
+  padding: 32px 60px;
+  z-index: 4;
+  gap: 48px;
+  flex-direction: row;
+  border-radius: 0 0 16px 16px;
+  border-top: 2px solid #ff7835;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  animation: dropdownFade 0.2s ease;
+}
+
+@keyframes dropdownFade {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.nav-item.open .nav-dropdown {
+  display: flex;
+}
+
+.nav-dropdown-col {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  min-width: 140px;
+}
+
+.nav-dropdown-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: #ff7835;
+  padding-bottom: 10px;
+  border-bottom: 1.5px solid #f0f0f0;
+}
+
+.nav-dropdown-col ul {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.nav-dropdown-col ul li a {
+  font-size: 18px;
+  color: #1a1a1a;
+  font-weight: 500;
+  transition: color 0.15s;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.nav-dropdown-col ul li a::before {
+  content: "•";
+  font-size: 12px;
+  color: #ff7835;
+}
+.nav-dropdown-col ul li a:hover {
+  color: #ff7835;
+}
+
+.nav-dropdown-col .nav-dropdown-link {
+  font-size: 18px;
+  color: #ff7835;
+  font-weight: 700;
+  margin-top: 8px;
+  transition: color 0.15s;
+}
+.nav-dropdown-col .nav-dropdown-link:hover {
+  opacity: 0.75;
+}
+
+/* 클릭/호버 시 메뉴 텍스트 컬러 변경 */
+.nav-item > a {
+  color: #fff;
+  transition: color 0.2s;
+}
+.nav-item:hover > a,
+.nav-item.open > a {
+  color: #ff7835;
+}
+
+/* style.css에 추가 — 기본은 숨김 */
+.hamburger {
+  display: none;
+}
+.mobile-menu {
+  display: none;
+}
+
+.mo-br {
+  display: none;
 }
