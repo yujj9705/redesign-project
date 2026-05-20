@@ -261,3 +261,131 @@ viewport.addEventListener("mouseleave", () => {
   sliderTop.start();
   sliderBottom.start();
 });
+
+// 오늘 그만보기
+const todayClose = document.querySelector(".today-close");
+const topBanner = document.querySelector(".top-banner");
+const header = document.querySelector(".header");
+const heroSection = document.querySelector(".hero-section");
+const heroRight = document.querySelector(".hero-right");
+
+function closeBanner() {
+  topBanner.style.display = "none";
+  header.style.top = "40px"; /* 배너 사라지면 위로 */
+  heroRight.style.top = "0px";
+  heroRight.style.height = "100%";
+  const today = new Date().toDateString();
+  localStorage.setItem("bannerClosedDate", today);
+}
+
+todayClose.addEventListener("click", closeBanner);
+
+// 페이지 로드 시 오늘 닫았으면 배너 숨김
+const bannerClosedDate = localStorage.getItem("bannerClosedDate");
+const today = new Date().toDateString();
+if (bannerClosedDate === today) {
+  closeBanner();
+}
+
+// 수강후기 세로 티커 복제
+const ticker = document.getElementById("reviewsTicker");
+if (ticker) {
+  ticker.innerHTML += ticker.innerHTML;
+}
+
+// 네비게이션 드롭다운 클릭 토글
+const navItems = document.querySelectorAll(".nav-item");
+
+navItems.forEach((item) => {
+  const link = item.querySelector("a");
+  const dropdown = item.querySelector(".nav-dropdown");
+  if (!dropdown) return;
+
+  link.addEventListener("click", (e) => {
+    e.preventDefault();
+    const isOpen = item.classList.contains("open");
+
+    // 모두 닫기
+    navItems.forEach((i) => i.classList.remove("open"));
+
+    // 클릭한 항목 토글
+    if (!isOpen) item.classList.add("open");
+  });
+});
+
+// 드롭다운 외부 클릭 시 닫기
+document.addEventListener("click", (e) => {
+  if (!e.target.closest(".nav-item")) {
+    navItems.forEach((i) => i.classList.remove("open"));
+  }
+});
+
+/* ────────────────────────────────────────
+   모바일 햄버거 메뉴
+──────────────────────────────────────── */
+const hamburger = document.querySelector(".hamburger");
+const mobileMenu = document.querySelector(".mobile-menu");
+const mobileMenuClose = document.querySelector(".mobile-menu-close");
+const mobileNavItems = document.querySelectorAll(".mobile-nav-item");
+
+if (hamburger && mobileMenu) {
+  hamburger.addEventListener("click", () => mobileMenu.classList.add("open"));
+  mobileMenuClose.addEventListener("click", () =>
+    mobileMenu.classList.remove("open"),
+  );
+
+  mobileNavItems.forEach((item) => {
+    const link = item.querySelector("a");
+    const sub = item.querySelector(".mobile-sub-list");
+    if (!sub) return;
+    link.addEventListener("click", (e) => {
+      e.preventDefault();
+      const isOpen = item.classList.contains("open");
+      mobileNavItems.forEach((i) => i.classList.remove("open"));
+      if (!isOpen) item.classList.add("open");
+    });
+  });
+}
+
+/* ────────────────────────────────────────
+   모바일 강의 미리보기 — 카드 클릭 시 아래 표시
+──────────────────────────────────────── */
+function initMobilePreview() {
+  const isMobile = window.innerWidth <= 767;
+  const previewRight = document.querySelector(".preview-right");
+  const previewList = document.getElementById("previewList");
+  if (!previewRight || !previewList) return;
+
+  if (isMobile) {
+    previewList.after(previewRight);
+    previewRight.classList.remove("mobile-active");
+    previewItems.forEach((item) => {
+      item.addEventListener("click", () => {
+        previewRight.classList.add("mobile-active");
+        item.after(previewRight);
+      });
+    });
+  } else {
+    const previewSection = document.querySelector(".preview-section");
+    previewSection.appendChild(previewRight);
+    previewRight.classList.remove("mobile-active");
+    previewRight.style.display = "";
+  }
+}
+
+initMobilePreview();
+window.addEventListener("resize", initMobilePreview);
+
+// 모바일(767px 이하)일 때 자격증 검색 라벨 텍스트 변경
+function updateCertLabel() {
+  const label = document.querySelector(".cert-search-label");
+  if (!label) return;
+  if (window.innerWidth <= 767) {
+    label.textContent = "어떤 자격증이 궁금하세요?";
+  } else {
+    label.textContent = "어떤 공예 종목의 자격증이 궁금 하신가요?";
+  }
+}
+
+updateCertLabel();
+window.addEventListener("resize", updateCertLabel);
