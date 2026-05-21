@@ -11,12 +11,18 @@
 @media (min-width: 1024px) and (max-width: 1200px) {
   /* 헤더 */
   .header {
+    top: 90px;
     right: 0;
     padding: 0 40px;
   }
   .header-left {
     gap: 24px;
   }
+
+  .top-banner img {
+    object-position: 10% center;
+  }
+
   .nav-box {
     gap: 20px;
   }
@@ -32,6 +38,11 @@
   .login-btn {
     font-size: 16px;
     padding: 0 16px;
+  }
+
+  .hero-section {
+    bottom: 12%;
+    left: 60px;
   }
 
   /* 전체 섹션 패딩 */
@@ -78,6 +89,12 @@
     width: 1px;
   }
 
+  .card,
+  .card-active {
+    height: 340px;
+    min-height: 340px;
+  }
+
   /* 미리보기 */
   .preview-left {
     max-width: 240px;
@@ -117,6 +134,11 @@
   }
   .preview-materials {
     overflow-x: auto;
+  }
+  .preview-title h2 {
+    font-size: 30px;
+    line-height: 1.2;
+    word-break: keep-all;
   }
 
   /* 맞춤추천 */
@@ -176,16 +198,26 @@
    TABLET (768px ~ 1023px)
 ──────────────────────────────────────── */
 @media (max-width: 1023px) {
+  .top-banner img {
+    object-position: 25% center;
+  }
+
+  .banner-controls {
+    display: none;
+  }
+
   /* 헤더 */
   .header {
     top: 60px;
     right: 0;
     padding: 0 24px;
     height: 70px;
+    margin-top: 20px;
   }
   .header-left {
     gap: 24px;
   }
+
   .logo img {
     width: 60px;
   }
@@ -208,6 +240,10 @@
   .login-btn {
     font-size: 14px;
     padding: 0 14px;
+  }
+
+  .hero {
+    min-height: 600px;
   }
 
   /* hero-right 숨김 */
@@ -237,7 +273,7 @@
   .hero-section {
     left: 40px;
     right: 40px;
-    bottom: 160px;
+    bottom: 12%;
   }
   .hero-text h1 {
     font-size: 52px;
@@ -471,12 +507,10 @@
 @media (max-width: 767px) {
   /* 배너 */
   .top-banner {
-    height: 50px;
+    display: none;
   }
   .banner-controls {
-    right: 16px;
-    font-size: 12px;
-    gap: 12px;
+    display: none;
   }
 
   /* 헤더: 햄버거 */
@@ -635,6 +669,7 @@
     font-size: 14px;
     margin-top: 10px;
   }
+
   .search-box {
     width: 100%;
     padding: 14px 16px;
@@ -652,6 +687,10 @@
   .search-input input {
     font-size: 13px;
     padding: 8px 14px;
+  }
+
+  .mo-br {
+    display: block;
   }
 
   /* 인기강의 — 1열 */
@@ -1135,8 +1174,9 @@
   .search-box {
     padding: 12px 14px;
   }
+
   .search-title {
-    font-size: 20px;
+    font-size: 30px;
     margin: 0 auto;
   }
 

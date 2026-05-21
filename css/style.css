@@ -76,6 +76,7 @@ img {
   color: #555;
   gap: 24px;
 }
+
 .details {
   display: flex;
   align-items: center;
@@ -99,8 +100,13 @@ img {
   display: flex;
   position: relative;
   width: 100%;
-  height: 100vh;
+  height: 56.25vw;
+  min-height: 700px;
+  max-height: 100vh;
+  position: relative;
+  margin-top: 0;
 }
+
 .hero-left {
   width: 100%;
   height: 100%;
@@ -126,7 +132,7 @@ img {
 
 .header {
   position: absolute;
-  top: 60px;
+  top: 90px;
   left: 0;
   right: 38%;
   z-index: 10;
@@ -256,13 +262,14 @@ img {
 
 .hero-section {
   position: absolute;
-  bottom: 200px;
+  bottom: 15%;
   left: 60px;
   z-index: 10;
   display: flex;
   flex-direction: column;
   gap: 32px;
 }
+
 .hero-text {
   color: #fff;
 }
@@ -279,7 +286,8 @@ img {
   opacity: 0.9;
 }
 .search-box {
-  width: 660px;
+  width: 100%;
+  max-width: 660px;
   background: linear-gradient(
     135deg,
     rgba(255, 120, 53, 0.65) 0%,
@@ -447,6 +455,7 @@ img {
   position: relative;
   flex: 1;
   min-height: 380px;
+  height: 380px;
   border: 1px solid #f58044;
   border-radius: 20px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
@@ -469,6 +478,7 @@ img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center top;
   transition: transform 0.3s ease;
 }
 .card:hover img,
@@ -516,8 +526,9 @@ img {
     color 0.3s ease,
     font-size 0.3s ease;
   display: -webkit-box;
-  -webkit-line-clamp: 4;
+  -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
+  word-break: keep-all;
   overflow: hidden;
 }
 .card:hover .card-text p,
@@ -560,7 +571,7 @@ img {
   outline-offset: -10px; /* 안쪽으로 10px 들어온 점선 */
 }
 .cert-search-label {
-  font-size: 24px;
+  font-size: 32px;
   font-weight: 700;
   color: #fff;
   background-color: #e5173e;
@@ -579,8 +590,8 @@ img {
   height: 54px;
   border: 1.5px solid #e0e0e0;
   border-radius: 30px;
-  padding: 0 24px;
-  font-size: 16px;
+  padding: 0 30px;
+  font-size: 20px;
   outline: none;
   color: #333;
 }
@@ -638,13 +649,13 @@ img {
   transform: translateX(-50%);
 }
 .tab-step {
-  font-size: 13px;
+  font-size: 18px;
   font-weight: 500;
   color: #929292;
   margin-bottom: 4px;
 }
 .tab-title {
-  font-size: 20px;
+  font-size: 24px;
   font-weight: 700;
   color: #1a1a1a;
 }
@@ -702,7 +713,7 @@ img {
   margin-top: 4px;
 }
 .cert-panel-links li a {
-  font-size: 15px;
+  font-size: 16px;
   color: #444;
 }
 .cert-panel-links li a:hover {
@@ -716,7 +727,7 @@ img {
   border: none;
   border-radius: 20px;
   color: #fff;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 600;
   cursor: pointer;
 }
@@ -749,6 +760,7 @@ img {
 }
 .cert-step-card {
   flex: 1;
+  min-width: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -762,7 +774,7 @@ img {
   text-align: center;
 }
 .cert-step-card span {
-  font-size: 13px;
+  font-size: 16px;
   font-weight: 600;
   opacity: 0.85;
 }
@@ -771,7 +783,7 @@ img {
   opacity: 0.9;
 }
 .cert-step-card p {
-  font-size: 15px;
+  font-size: 18px;
   font-weight: 600;
 }
 .cert-step-divider {
@@ -863,14 +875,14 @@ img {
   flex: 1;
 }
 .preview-item-text h4 {
-  font-size: 16px;
+  font-size: 20px;
   font-weight: 700;
   color: #1a1a1a;
   margin-bottom: 6px;
 }
 .preview-item-text p {
-  font-size: 13px;
-  color: #666;
+  font-size: 16px;
+  color: #424242;
   line-height: 1.5;
   display: -webkit-box;
   -webkit-line-clamp: 3;
@@ -978,20 +990,20 @@ img {
   opacity: 0.95;
 }
 .preview-price {
-  font-size: 16px;
+  font-size: 18px;
   color: #fff;
   margin-top: 4px;
 }
 .preview-price strong {
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 800;
 }
 .preview-price span {
-  font-size: 13px;
+  font-size: 14px;
   opacity: 0.8;
 }
 .preview-desc {
-  font-size: 14px;
+  font-size: 18px;
   color: #fff;
   opacity: 0.9;
   line-height: 1.6;
@@ -1003,7 +1015,7 @@ img {
   margin: 4px 0;
 }
 .preview-checklist li {
-  font-size: 14px;
+  font-size: 20px;
   color: #fff;
   font-weight: 600;
   display: flex;
@@ -1015,7 +1027,7 @@ img {
   font-size: 13px;
 }
 .preview-desc-long {
-  font-size: 13px;
+  font-size: 20px;
   color: #fff;
   opacity: 0.85;
   line-height: 1.7;
@@ -1077,7 +1089,7 @@ img {
   color: #fff;
 }
 .material-item span {
-  font-size: 13px;
+  font-size: 14px;
   color: #fff;
   font-weight: 500;
 }
@@ -1265,7 +1277,7 @@ img {
   gap: 16px;
   padding: 18px 8px;
   border-bottom: 1px solid rgba(229, 23, 62, 0.15);
-  font-size: 15px;
+  font-size: 18px;
   line-height: 1.7;
   flex-shrink: 0;
 }
@@ -1335,7 +1347,7 @@ img {
   padding: 16px 20px;
   border: 1.5px solid #ddd;
   border-radius: 30px;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 600;
   color: #555;
   cursor: pointer;
@@ -1405,14 +1417,15 @@ img {
   align-items: flex-start;
 }
 .recommend-course-card {
-  width: 360px;
+  flex: 1;
+  min-width: 0;
   flex-shrink: 0;
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
 .recommend-img-wrap {
-  width: 360px;
+  width: 100%;
   height: 400px;
   border-radius: 16px;
   overflow: hidden;
@@ -1440,13 +1453,13 @@ img {
 }
 
 .recommend-course-card h4 {
-  font-size: 16px;
+  font-size: 20px;
   font-weight: 700;
   color: #1a1a1a;
   line-height: 1.4;
 }
 .recommend-course-card p {
-  font-size: 14px;
+  font-size: 18px;
   color: #666;
   line-height: 1.6;
 }
@@ -1470,12 +1483,12 @@ img {
   gap: 8px;
 }
 .price-label {
-  font-size: 18px;
+  font-size: 24px;
   font-weight: 700;
   color: #1a1a1a;
 }
 .price-formula {
-  font-size: 16px;
+  font-size: 24px;
   color: #444;
   display: flex;
   align-items: center;
@@ -1483,7 +1496,7 @@ img {
   flex-wrap: wrap;
 }
 .price-sale {
-  font-size: 32px;
+  font-size: 34px;
   font-weight: 800;
   color: #e5173e;
 }
@@ -1494,7 +1507,7 @@ img {
 }
 .recommend-price-right {
   text-align: right;
-  font-size: 13px;
+  font-size: 16px;
   color: #888;
   line-height: 1.8;
   flex-shrink: 0;
@@ -1536,7 +1549,7 @@ img {
 }
 .community-card {
   width: 400px;
-  height: 385px;
+  height: auto;
   flex: 1;
   border-radius: 24px;
   overflow: hidden;
@@ -1544,7 +1557,7 @@ img {
   transition:
     transform 0.2s,
     box-shadow 0.2s;
-  aspect-ratio: 3 / 4;
+  aspect-ratio: 1 / 1;
 }
 .community-card:hover {
   transform: translateY(-6px);
@@ -1596,7 +1609,7 @@ img {
   border-radius: 8px;
 }
 .news-num {
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 700;
   color: #1a1a1a;
   min-width: 48px;
@@ -1605,7 +1618,7 @@ img {
 }
 .news-text {
   flex: 1;
-  font-size: 15px;
+  font-size: 16px;
   color: #333;
 }
 .news-date {
@@ -1683,6 +1696,7 @@ img {
 }
 
 .goto-links {
+  flex-wrap: wrap;
   display: flex;
   align-items: center;
   gap: 20px;
@@ -1699,7 +1713,7 @@ img {
   border: 1px solid #b4b4b4;
   border-radius: 20px 0px 20px 20px;
   color: #000;
-  font-size: 24px;
+  font-size: 20px;
   font-weight: 600;
   white-space: nowrap;
   transition:
@@ -1723,7 +1737,7 @@ img {
   flex-shrink: 0;
 }
 .goto-icon i {
-  font-size: 12px;
+  font-size: 14px;
   color: #fff;
 }
 
@@ -1825,7 +1839,7 @@ img {
 }
 .footer-menu li a {
   color: #fff;
-  font-size: 15px;
+  font-size: 18px;
   opacity: 0.9;
 }
 .footer-menu li a:hover {
@@ -1839,7 +1853,7 @@ img {
   display: flex;
   align-items: center;
   gap: 30px;
-  font-size: 15px;
+  font-size: 18px;
   margin-bottom: 12px;
   opacity: 0.9;
 }
@@ -1852,7 +1866,7 @@ img {
   flex-shrink: 0;
 }
 .footer-info-bottom {
-  font-size: 14px;
+  font-size: 16px;
   opacity: 0.85;
   line-height: 1.8;
   margin-bottom: 12px;
@@ -1861,7 +1875,7 @@ img {
   font-weight: 700;
 }
 .copyright .copy {
-  font-size: 13px;
+  font-size: 18px;
   opacity: 0.7;
 }
 .footer-right {
@@ -1886,7 +1900,7 @@ img {
   line-height: 1.7;
 }
 .text {
-  font-size: 17px;
+  font-size: 18px;
   font-weight: 700;
 }
 .f-bottom-line {
@@ -1903,7 +1917,7 @@ img {
   display: flex;
   align-items: center;
   gap: 16px;
-  font-size: 15px;
+  font-size: 16px;
 }
 .footer-line {
   width: 1px;
@@ -1936,11 +1950,11 @@ img {
   display: none;
   position: absolute;
   top: 80px; /* 헤더 높이만큼 아래 */
-  left: 0; /* 헤더 왼쪽 끝 */
+  left: 10%; /* 헤더 왼쪽 끝 */
   right: 0; /* 헤더 오른쪽 끝 (로그인 버튼까지) */
   background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(12px);
-  padding: 32px 60px;
+  padding: 32px 40px;
   z-index: 4;
   gap: 48px;
   flex-direction: row;
